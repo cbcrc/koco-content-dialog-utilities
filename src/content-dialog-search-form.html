@@ -1,0 +1,18 @@
+<!-- ko with: $parent -->
+<div class="well well-small clearfix search">
+    <div class="search-loading" data-bind="visible: isSearchInProgress">
+        <div class="loading">
+            <i class="fa fa-cog fa-spin fa-2x"></i>
+            <p>Recherche en cours...</p>
+            <button data-bind="click: cancelSearch" class="btn btn-inverse">annuler la recherche</button>
+        </div>
+    </div>
+    <form data-bind="submit: searchForItems" class="searchForm">
+        <!-- ko template: { nodes: $componentTemplateNodes, data: $data } -->
+        <!-- /ko -->
+        <div class="btn-toolbar pull-right">
+            <button type="submit" class="btn btn-default searchBtn">Recherche</button>
+        </div>
+    </form>
+</div>
+<!-- /ko -->

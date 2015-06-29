@@ -1,0 +1,29 @@
+{
+  "name": "koco-content-dialog-utilities",
+  "version": "0.1.0",
+  "homepage": "https://github.com/cbcrc/koco-content-dialog-utilities",
+  "authors": [
+    "Colin Prince <colin.prince@cbc.ca>"
+  ],
+  "description": "Utilities for searching and picking media.",
+  "main": "koco-content-dialog-base-viewmodel.js",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "koco"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.1.3",
+    "knockout": "^3.2.0",
+    "i18next": "^1.9.0"
+  }
+}

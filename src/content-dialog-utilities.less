@@ -1,0 +1,82 @@
+content-dialog-edit-form {
+    div.selection-header {
+        margin-bottom: 40px;
+        display: block;
+        span.label-success {
+            margin-top: 10px;
+            display: inline-block;
+        }
+    }
+}
+div.dialog {
+    .search {
+        position: relative;
+        .search-loading {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            background-color: #f5f5f5;
+            opacity: 0.8;
+            filter: alpha(opacity=80);
+            .loading {
+                text-align: center;
+                position: absolute;
+                width: 100%;
+                top: 50%;
+                margin-top: -30px;
+            }
+        }
+    }
+    .search.well {
+        .search-loading {
+            border-radius: 4px;
+        }
+    }
+    .search.well-small {
+        .search-loading {
+            border-radius: 3px;
+        }
+    }
+    .search-results {
+        .searchResultScrollingDiv {
+            height: 272px;
+            overflow: auto;
+            border: 1px solid #E3E3E3;
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 5px;
+            background-color: #fff;
+            li {
+                border-bottom: 1px solid #dadada;
+                div.timings {
+                    line-height: 16px;
+                }
+            }
+            li:hover {
+                background-color: @dropdown-link-hover-bg;
+                cursor: pointer;
+            }
+            li.active {
+                background-color: #0081C2;
+                color: #fff;
+                cursor: pointer;
+                .text-muted {
+                    color: #efefef;
+                }
+            }
+        }
+    }
+    .hidden-submit-button-for-enter-key {
+        overflow: hidden;
+        height: 1px;
+        width: 1px;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+}
