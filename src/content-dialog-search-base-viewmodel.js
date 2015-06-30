@@ -7,9 +7,10 @@ define([
         'object-utilities',
         'lodash',
         'mapping-utilities',
-        'disposer'
+        'disposer',
+        'i18next'
     ],
-    function(ko, $, toastr, objectUtilities, _, koMappingUtilities, KoDisposer) {
+    function(ko, $, toastr, objectUtilities, _, koMappingUtilities, KoDisposer, i18n) {
         'use strict';
 
         var defaultPagingFields = {
@@ -118,7 +119,7 @@ define([
                     //if (errorThrown) {
                         if (errorThrown !== 'abort') {
                             //toastr.error(errorThrown);
-                            toastr.error('Une erreur est survenue. Veuillez contacter Soutien MuSN: soutien.isn@radio-canada.ca');
+                            toastr.error(i18n.t('content-dialog-edit-form.unknown-error'));
                         }
                     //}
                 })

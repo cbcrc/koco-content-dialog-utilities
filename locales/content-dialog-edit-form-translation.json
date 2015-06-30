@@ -9,6 +9,12 @@
             "form-error": "The form contains errors. Please correct them.",
             "no-item-selected": "You need to select an item.",
             "unknown-error": "An unknown error occured. Please contact soutien.isn@radio-canada.ca"
+        },
+        "content-dialog-search-results-container": {
+            "no-results": "No results",
+            "one-result": "1 result",
+            "results": "results",
+            "see-more": "See more"
         }
     },
     "fr": {
@@ -21,6 +27,12 @@
             "form-error": "Le formulaire comporte des erreurs. Veuillez les corriger.",
             "no-item-selected": "Vous devez sélectionner un item.",
             "unknown-error": "Une erreur est survenue. Veuillez contacter Soutien MuSN: soutien.isn@radio-canada.ca"
+        },
+        "content-dialog-search-results-container": {
+            "no-results": "Aucun résultat",
+            "one-result": "1 résultat",
+            "results": "résultats",
+            "see-more": "Voir plus"
         }
     }
 }
