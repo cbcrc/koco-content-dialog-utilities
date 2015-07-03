@@ -1,0 +1,18 @@
+{
+    "content-dialog-edit-form": {
+        "searching": "Recherche en cours...",
+        "cancel-search": "annuler la recherche",
+        "search-button": "Recherche",
+        "your-selection": "Votre sélection",
+        "original-selection": "Sélection originale",
+        "form-error": "Le formulaire comporte des erreurs. Veuillez les corriger.",
+        "no-item-selected": "Vous devez sélectionner un item.",
+        "unknown-error": "Une erreur est survenue. Veuillez contacter Soutien MuSN: soutien.isn@radio-canada.ca"
+    },
+    "content-dialog-search-results-container": {
+        "no-results": "Aucun résultat",
+        "one-result": "1 résultat",
+        "results": "résultats",
+        "see-more": "Voir plus"
+    }
+}

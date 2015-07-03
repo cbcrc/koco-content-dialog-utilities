@@ -119,7 +119,7 @@ define([
                     //if (errorThrown) {
                         if (errorThrown !== 'abort') {
                             //toastr.error(errorThrown);
-                            toastr.error(i18n.t('content-dialog-edit-form.unknown-error'));
+                            toastr.error(i18n.t('koco-content-dialog-utilities.content-dialog-edit-form.unknown-error'));
                         }
                     //}
                 })

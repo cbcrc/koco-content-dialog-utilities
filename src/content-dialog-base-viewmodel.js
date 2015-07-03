@@ -142,7 +142,7 @@ define([
         ContentDialogViewModel.prototype.prepareScreenForValidationErrors = function(dfd) {
             var self = this;
 
-            toastr.error(i18n.t('content-dialog-edit-form.form-error'));
+            toastr.error(i18n.t('koco-content-dialog-utilities.content-dialog-edit-form.form-error'));
 
             $('html, body').animate({
                 scrollTop: 0
@@ -239,7 +239,7 @@ define([
 
             //HACK: Il faudrait probablement créer un objet de base et un SearchableContentViewModel, à investiguer.
             if (self.isSearchable && self.hasSelectedItem() === false) {
-                return i18n.t('content-dialog-edit-form.no-item-selected');
+                return i18n.t('koco-content-dialog-utilities.content-dialog-edit-form.no-item-selected');
             }
         };
 
@@ -247,7 +247,7 @@ define([
             //todo: scoop api devrait retourner un 400 pour erreurs de validations mais il retourne un 500...
             //toto: log erreur!?
             //toastr.error(jqXhr.responseText);
-            toastr.error(i18n.t('content-dialog-edit-form.unknown-error'));
+            toastr.error(i18n.t('koco-content-dialog-utilities.content-dialog-edit-form.unknown-error'));
         };
 
         ContentDialogViewModel.prototype.toOutputModel = function() {

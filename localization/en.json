@@ -1,0 +1,18 @@
+{
+    "content-dialog-edit-form": {
+        "searching": "Searching...",
+        "cancel-search": "Cancel the search",
+        "search-button": "Search",
+        "your-selection": "Your Selection",
+        "original-selection": "Original Selection",
+        "form-error": "The form contains errors. Please correct them.",
+        "no-item-selected": "You need to select an item.",
+        "unknown-error": "An unknown error occured. Please contact soutien.isn@radio-canada.ca"
+    },
+    "content-dialog-search-results-container": {
+        "no-results": "No results",
+        "one-result": "1 result",
+        "results": "results",
+        "see-more": "See more"
+    }
+}
