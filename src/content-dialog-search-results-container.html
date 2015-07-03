@@ -2,7 +2,7 @@
 <div class="well well-small search-results" data-bind="visible: hasSearched">
     <p data-bind="visible: items().length == 0, translatedText: 'koco-content-dialog-utilities.content-dialog-search-results-container.no-results'"></p>
     <p data-bind="visible: items().length == 1, translatedText: 'koco-content-dialog-utilities.content-dialog-search-results-container.one-result'"></p>
-    <p data-bind="visible: items().length > 1"><span data-bind="text: items().length"></span>&nbsp;<span data-bind="translatedText: 'content-dialog-search-results-container.results'"></span></p>
+    <p data-bind="visible: items().length > 1"><span data-bind="text: items().length"></span>&nbsp;<span data-bind="translatedText: 'koco-content-dialog-utilities.content-dialog-search-results-container.results'"></span></p>
     <!-- ko if: items().length > 0 -->
     <div class="searchResultScrollingDiv content-list-page">
         <ul data-bind="foreach: { data: items, as: 'myItem' }">
