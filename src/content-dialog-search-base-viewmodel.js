@@ -120,8 +120,6 @@ define([
 			
             self.searchArguments = $.extend({}, self.searchArguments,
                 objectUtilities.pickNonFalsy(koMappingUtilities.toJS(defaultPagingArguments)));
-            self.searchArguments = $.extend({}, self.searchArguments,
-                objectUtilities.pickNonFalsy(koMappingUtilities.toJS(self.pagingFields)));
         };
 
         ContentDialogSearchViewModelExtender.prototype.search = function() {
