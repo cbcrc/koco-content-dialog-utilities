@@ -98,6 +98,28 @@ define([
         ContentDialogSearchViewModelExtender.prototype.updateSearchArgumentsWithPagingFields = function() {
             var self = this;
 
+			/* ADDED TO MAP FROM THE OLD FIELD TO THE NEW FIELD WHILE TRYING TO KEEP THE OBSERVER ON THE OLD OBJECT */
+			var pagingAttr = {
+				pageNumber: 'page',
+				pageSize: 'pageSize'
+			};
+
+			// Added safety check just in case
+			if(typeof self.settings === "undefined") { 
+				self.settings = {};
+			}
+			if(typeof defaultPagingArguments === "undefined") { 
+				var defaultPagingArguments = {};
+			}
+			
+			self.settings.defaultPagingAttr = $.extend({}, pagingAttr);
+
+			_.each(self.settings.defaultPagingAttr, function(key, value) {
+				defaultPagingArguments[key] = self.pagingFields[value];
+			});
+			
+            self.searchArguments = $.extend({}, self.searchArguments,
+                objectUtilities.pickNonFalsy(koMappingUtilities.toJS(defaultPagingArguments)));
             self.searchArguments = $.extend({}, self.searchArguments,
                 objectUtilities.pickNonFalsy(koMappingUtilities.toJS(self.pagingFields)));
         };
@@ -166,9 +188,15 @@ define([
         ContentDialogSearchViewModelExtender.prototype.goToNextPage = function() {
             var self = this;
 
-            self.pagingFields.pageNumber((self.pagingFields.pageNumber() || 1) + 1);
+			// Set the next page number
+			var nextPageNumber = (defaultPagingFields.pageNumber || 1) + 1;
+			
+            self.pagingFields.pageNumber(nextPageNumber);
             self.isPaging(true);
             self.updateSearchArgumentsWithPagingFields();
+
+			// Update page number in the default paging object as there is something that block updating directing in the pagingField object.
+			defaultPagingFields.pageNumber = nextPageNumber;
 
             return self.search();
         };
