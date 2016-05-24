@@ -1,0 +1,17 @@
+
+<form class="well well-small selected-content-form" data-bind="submit: save">
+    <div class="hidden-submit-button-for-enter-key">
+        <button type="submit" />
+    </div>
+    <div class="selection-header">
+        <!-- ko if: undoSelectionVisible -->
+        <button class="btn pull-right btn-undo text-left btn-default" data-bind="click: undoSelection,
+    attr:{ title: 'Sélection originale' }">
+            <i class="fa fa-undo"></i>&nbsp;<span data-bind="translatedText: 'koco-content-dialog-utilities.content-dialog-edit-form.your-selection'"></span>
+        </button>
+        <!-- /ko -->
+        <span class="label label-success" data-bind="translatedText: 'koco-content-dialog-utilities.content-dialog-edit-form.your-selection'"></span>
+    </div>
+    <!-- ko template: { nodes: $componentTemplateNodes, data: $parent } -->
+    <!-- /ko -->
+</form>

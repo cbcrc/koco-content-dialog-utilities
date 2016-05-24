@@ -1,0 +1,17 @@
+<!-- ko with: $parent -->
+<div class="well well-small search-results" data-bind="visible: hasSearched">
+    <p data-bind="visible: items().length == 0, translatedText: 'koco-content-dialog-utilities.content-dialog-search-results-container.no-results'"></p>
+    <p data-bind="visible: items().length == 1, translatedText: 'koco-content-dialog-utilities.content-dialog-search-results-container.one-result'"></p>
+    <p data-bind="visible: items().length > 1"><span data-bind="text: items().length"></span>&nbsp;<span data-bind="translatedText: 'koco-content-dialog-utilities.content-dialog-search-results-container.results'"></span></p>
+    <!-- ko if: items().length > 0 -->
+    <div class="searchResultScrollingDiv content-list-page">
+        <ul data-bind="foreach: { data: items, as: 'myItem' }">
+            <li data-bind="event: { click: $parent.selectItem.bind($parent, myItem, event), dblclick: $parent.selectItem.bind($parent, myItem, event) }, css: { active: isSelected() }">
+                <!-- ko template: { nodes: $componentTemplateNodes, data: myItem } --><!-- /ko -->
+            </li>
+        </ul>
+        <button type="button" class="sr-only" data-bind="asyncClick: goToNextPage, asyncClickHtml: '&lt;i class=&quot;fa fa-spinner fa-pulse&quot;&gt;&lt;/i&gt; Chargement en cours...', triggerWhenScrolledToBottom: 'click', triggerWhenScrolledToBottomOptions: { disabled: pagingDisabled, offset: 15, useParent: true }, translatedText: 'koco-content-dialog-utilities.content-dialog-search-results-container.see-more'"></button>
+    </div>
+    <!-- /ko -->
+</div>
+<!-- /ko -->

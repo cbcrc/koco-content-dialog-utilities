@@ -1,0 +1,18 @@
+<!-- ko with: $parent -->
+<div class="well well-small clearfix search">
+    <div class="search-loading" data-bind="visible: isSearchInProgress">
+        <div class="loading">
+            <i class="fa fa-cog fa-spin fa-2x"></i>
+            <p data-bind="translatedText: 'koco-content-dialog-utilities.content-dialog-edit-form.searching'"></p>
+            <button data-bind="click: cancelSearch, translatedText: 'koco-content-dialog-utilities.content-dialog-edit-form.cancel-search'" class="btn btn-inverse"></button>
+        </div>
+    </div>
+    <form data-bind="submit: searchForItems" class="searchForm">
+        <!-- ko template: { nodes: $componentTemplateNodes, data: $data } -->
+        <!-- /ko -->
+        <div class="btn-toolbar pull-right">
+            <button type="submit" data-bind="translatedText: 'koco-content-dialog-utilities.content-dialog-edit-form.search-button'" class="btn btn-default searchBtn"></button>
+        </div>
+    </form>
+</div>
+<!-- /ko -->
