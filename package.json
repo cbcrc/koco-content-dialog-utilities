@@ -15,8 +15,14 @@
   },
   "license": "MIT",
   "dependencies": {
-    "jquery": "^2.1.3",
-    "knockout": "^3.2.0",
-    "i18next": "^1.9.0"
+    "i18next": "^3.1.0",
+    "jquery": "^2.2.4",
+    "knockout": "^3.4.0",
+    "koco": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0"
   }
 }
