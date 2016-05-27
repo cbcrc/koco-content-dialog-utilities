@@ -16,21 +16,21 @@ var _toastr = require('toastr');
 
 var _toastr2 = _interopRequireDefault(_toastr);
 
-var _objectUtilities = require('object-utilities');
+var _kocoObjectUtilities = require('koco-object-utilities');
 
-var _objectUtilities2 = _interopRequireDefault(_objectUtilities);
+var _kocoObjectUtilities2 = _interopRequireDefault(_kocoObjectUtilities);
 
 var _lodash = require('lodash');
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _mappingUtilities = require('mapping-utilities');
+var _kocoMappingUtilities = require('koco-mapping-utilities');
 
-var _mappingUtilities2 = _interopRequireDefault(_mappingUtilities);
+var _kocoMappingUtilities2 = _interopRequireDefault(_kocoMappingUtilities);
 
-var _disposer = require('disposer');
+var _kocoDisposer = require('koco-disposer');
 
-var _disposer2 = _interopRequireDefault(_disposer);
+var _kocoDisposer2 = _interopRequireDefault(_kocoDisposer);
 
 var _i18next = require('i18next');
 
@@ -48,7 +48,7 @@ var defaultPagingFields = {
 var ContentDialogSearchViewModelExtender = function ContentDialogSearchViewModelExtender(params) {
     var self = this;
 
-    self.koDisposer = new _disposer2.default();
+    self.koDisposer = new _kocoDisposer2.default();
     self.selectedInList = _knockout2.default.observable();
     self.items = _knockout2.default.observableArray();
     self.apiResourceName = params.apiResourceName;
@@ -145,7 +145,7 @@ ContentDialogSearchViewModelExtender.prototype.updateSearchArgumentsWithPagingFi
         defaultPagingArguments[key] = self.pagingFields[value];
     });
 
-    self.searchArguments = _jquery2.default.extend({}, self.searchArguments, _objectUtilities2.default.pickNonFalsy(_mappingUtilities2.default.toJS(defaultPagingArguments)));
+    self.searchArguments = _jquery2.default.extend({}, self.searchArguments, _kocoObjectUtilities2.default.pickNonFalsy(_kocoMappingUtilities2.default.toJS(defaultPagingArguments)));
 };
 
 ContentDialogSearchViewModelExtender.prototype.search = function () {
@@ -224,7 +224,7 @@ ContentDialogSearchViewModelExtender.prototype.goToNextPage = function () {
 ContentDialogSearchViewModelExtender.prototype.searchForItems = function () {
     var self = this;
 
-    var searchFields = _mappingUtilities2.default.toJS(self.searchFields);
+    var searchFields = _kocoMappingUtilities2.default.toJS(self.searchFields);
     self.lastSearchSnapshot.searchFields = searchFields;
     self.pagingFields.pageNumber(null);
     self.itemsDispose();
@@ -237,7 +237,7 @@ ContentDialogSearchViewModelExtender.prototype.searchForItems = function () {
 };
 
 ContentDialogSearchViewModelExtender.prototype.getSearchArgumentsFromFields = function () {
-    var searchFields = _mappingUtilities2.default.toJS(this.searchFields);
+    var searchFields = _kocoMappingUtilities2.default.toJS(this.searchFields);
     var searchArguments = _lodash2.default.pick(searchFields, this.searchArgumentsFields);
 
     return searchArguments;

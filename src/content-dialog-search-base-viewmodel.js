@@ -3,10 +3,10 @@
 import ko from 'knockout';
 import $ from 'jquery';
 import toastr from 'toastr';
-import objectUtilities from 'object-utilities';
+import objectUtilities from 'koco-object-utilities';
 import _ from 'lodash';
-import koMappingUtilities from 'mapping-utilities';
-import KoDisposer from 'disposer';
+import koMappingUtilities from 'koco-mapping-utilities';
+import KoDisposer from 'koco-disposer';
 import i18n from 'i18next';
 
 

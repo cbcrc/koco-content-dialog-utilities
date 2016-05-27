@@ -24,13 +24,13 @@ var _validationUtilities = require('validation-utilities');
 
 var _validationUtilities2 = _interopRequireDefault(_validationUtilities);
 
-var _mappingUtilities = require('mapping-utilities');
+var _kocoMappingUtilities = require('koco-mapping-utilities');
 
-var _mappingUtilities2 = _interopRequireDefault(_mappingUtilities);
+var _kocoMappingUtilities2 = _interopRequireDefault(_kocoMappingUtilities);
 
-var _disposer = require('disposer');
+var _kocoDisposer = require('koco-disposer');
 
-var _disposer2 = _interopRequireDefault(_disposer);
+var _kocoDisposer2 = _interopRequireDefault(_kocoDisposer);
 
 var _i18next = require('i18next');
 
@@ -59,7 +59,7 @@ var ContentDialogViewModel = function ContentDialogViewModel(params) {
         bootstrapValidation: {}
     });
 
-    self.koDisposer = new _disposer2.default();
+    self.koDisposer = new _kocoDisposer2.default();
     self.koDisposer.add(self.selectedInList.subscribe(self.selectedInListChanged.bind(self)));
 
     self.validatedObservables = [self.selectedItem];
@@ -89,7 +89,7 @@ ContentDialogViewModel.prototype.getUndoSelectionVisible = function () {
 ContentDialogViewModel.prototype.getHasSelectedItem = function () {
     var self = this;
 
-    var selectedItem = _mappingUtilities2.default.toJS(self.selectedItem);
+    var selectedItem = _kocoMappingUtilities2.default.toJS(self.selectedItem);
 
     return !!(selectedItem && selectedItem.id);
 };
@@ -97,7 +97,7 @@ ContentDialogViewModel.prototype.getHasSelectedItem = function () {
 ContentDialogViewModel.prototype.getOriginalItemSelected = function () {
     var self = this;
 
-    var originalItem = _mappingUtilities2.default.toJS(self.originalItem);
+    var originalItem = _kocoMappingUtilities2.default.toJS(self.originalItem);
 
     return !!(originalItem && self.isSame(originalItem));
 };
@@ -125,7 +125,7 @@ ContentDialogViewModel.prototype.getSearchOnDisplay = function () {
 ContentDialogViewModel.prototype.isSame = function (item) {
     var self = this;
 
-    var selectedItem = _mappingUtilities2.default.toJS(self.selectedItem);
+    var selectedItem = _kocoMappingUtilities2.default.toJS(self.selectedItem);
 
     return selectedItem && item && selectedItem.id === item.id;
 };
@@ -133,7 +133,7 @@ ContentDialogViewModel.prototype.isSame = function (item) {
 ContentDialogViewModel.prototype.isOriginalItem = function (item) {
     var self = this;
 
-    var originalItem = _mappingUtilities2.default.toJS(self.originalItem);
+    var originalItem = _kocoMappingUtilities2.default.toJS(self.originalItem);
 
     return originalItem && item && originalItem.id === item.id;
 };
@@ -279,7 +279,7 @@ ContentDialogViewModel.prototype.handleUnknownError = function () /*error*/{
 ContentDialogViewModel.prototype.toOutputModel = function () {
     var self = this;
 
-    var outputModel = _mappingUtilities2.default.toJS(self.selectedItem);
+    var outputModel = _kocoMappingUtilities2.default.toJS(self.selectedItem);
 
     self.cleanOutputModel(outputModel);
 

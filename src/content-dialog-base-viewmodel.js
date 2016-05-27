@@ -3,8 +3,8 @@ import ko from 'knockout';
 import toastr from 'toastr';
 import _ from 'lodash';
 import koValidationUtilities from 'validation-utilities';
-import koMappingUtilities from 'mapping-utilities';
-import KoDisposer from 'disposer';
+import koMappingUtilities from 'koco-mapping-utilities';
+import KoDisposer from 'koco-disposer';
 import i18n from 'i18next';
 
 
