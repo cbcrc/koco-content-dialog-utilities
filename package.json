@@ -25,6 +25,7 @@
     "koco-mapping-utilities": "^1.1.0",
     "koco-disposer": "^1.1.0",
     "koco-object-utilities": "^1.1.0",
+    "koco-url-utilities": "^1.1.0",
     "bootstrap": "^3.3.6"
   },
   "peerDependencies": {
