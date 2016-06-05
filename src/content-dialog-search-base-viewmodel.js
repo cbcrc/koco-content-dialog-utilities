@@ -32,7 +32,6 @@ var ContentDialogSearchViewModelExtender = function(params) {
   self.searchArgumentsFields = Object.keys(params.defaultSearchFields).concat(Object.keys(defaultPagingFields));
   self.searchFields = ko.mapping.fromJS(params.defaultSearchFields);
   self.isSearchInProgress = ko.observable(self.searchOnDisplay);
-  self.searchQuery = null;
   self.searchCanceled = false;
   self.api = params.api;
 
@@ -77,10 +76,6 @@ ContentDialogSearchViewModelExtender.prototype.start = function() {
 ContentDialogSearchViewModelExtender.prototype.cancelSearch = function() {
   var self = this;
 
-  if (self.searchQuery) {
-    self.searchQuery.abort();
-  }
-
   self.searchCanceled = true;
   self.isSearchInProgress(false);
 };
@@ -117,7 +112,7 @@ ContentDialogSearchViewModelExtender.prototype.search = function() {
   self.isSearchInProgress(true);
   self.searchCanceled = false;
 
-  self.searchQuery = self.api
+  return self.api
     .fetch(urls.appendParams(ko.unwrap(self.apiResourceName), self.searchArguments))
     .then(function(pagedListOfItems) {
       self.hasSearched(true);
@@ -137,8 +132,6 @@ ContentDialogSearchViewModelExtender.prototype.search = function() {
 
       self.isPaging(false);
     });
-
-  return self.searchQuery;
 };
 
 ContentDialogSearchViewModelExtender.prototype.bindSearchResults = function(pagedListOfItems) {

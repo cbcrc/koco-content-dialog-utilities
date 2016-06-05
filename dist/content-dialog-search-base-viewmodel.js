@@ -63,7 +63,6 @@
     self.searchArgumentsFields = Object.keys(params.defaultSearchFields).concat(Object.keys(defaultPagingFields));
     self.searchFields = _knockout2.default.mapping.fromJS(params.defaultSearchFields);
     self.isSearchInProgress = _knockout2.default.observable(self.searchOnDisplay);
-    self.searchQuery = null;
     self.searchCanceled = false;
     self.api = params.api;
 
@@ -110,10 +109,6 @@
   ContentDialogSearchViewModelExtender.prototype.cancelSearch = function () {
     var self = this;
 
-    if (self.searchQuery) {
-      self.searchQuery.abort();
-    }
-
     self.searchCanceled = true;
     self.isSearchInProgress(false);
   };
@@ -149,7 +144,7 @@
     self.isSearchInProgress(true);
     self.searchCanceled = false;
 
-    self.searchQuery = self.api.fetch(_kocoUrlUtilities2.default.appendParams(_knockout2.default.unwrap(self.apiResourceName), self.searchArguments)).then(function (pagedListOfItems) {
+    return self.api.fetch(_kocoUrlUtilities2.default.appendParams(_knockout2.default.unwrap(self.apiResourceName), self.searchArguments)).then(function (pagedListOfItems) {
       self.hasSearched(true);
       self.bindSearchResults(pagedListOfItems);
     }).catch(function (error) {
@@ -166,8 +161,6 @@
 
       self.isPaging(false);
     });
-
-    return self.searchQuery;
   };
 
   ContentDialogSearchViewModelExtender.prototype.bindSearchResults = function (pagedListOfItems) {
