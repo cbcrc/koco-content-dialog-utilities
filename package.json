@@ -15,7 +15,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "i18next": "^1.9.0",
+    "i18next": "^3.1.0",
     "jquery": "^2.1.4",
     "knockout": "^3.4.0",
     "lodash": "^4.6.1",
