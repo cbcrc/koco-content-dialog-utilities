@@ -29,7 +29,7 @@
     "bootstrap": "^3.3.6"
   },
   "peerDependencies": {
-    "koco": "^1.0.0"
+    "koco": "^2.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",
