@@ -19,7 +19,7 @@
     "jquery": "^2.1.4",
     "knockout": "^3.4.0",
     "lodash": "^4.6.1",
-    "koco-dialoger": "^1.1.0",
+    "koco-dialoger": "^2.0.0",
     "toastr": "^2.1.1",
     "koco-validation": "^1.1.0",
     "koco-mapping-utilities": "^1.1.0",
